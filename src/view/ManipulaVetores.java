@@ -27,7 +27,7 @@ public class ManipulaVetores {
             System.out.println("---ManipulaVetores---\n"
                     + "Digite 8 valores para o VETOR!!!\n");
 
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 8; i++) {
 
                 valores[i] = scan.nextDouble();
 
@@ -95,7 +95,7 @@ public class ManipulaVetores {
                         } else {
 
                             System.out.println("\nItem EXCLUÍDO!\n"
-                                    + "-----Resultado-----\n");
+                                    + "\n-----Resultado-----\n");
 
                         }
 
