@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class ManipulaVetores {
 
     /**
-     * Classe principal para o exercício Organização de Dados.
+     * Classe principal para o Exercício Organização de Dados.
      *
      * @param args
      */
@@ -174,14 +174,10 @@ public class ManipulaVetores {
 
             for (int i = 0; i < qtdVetor - 1; i++) {
 
-                if ( i >= posicao) {
-                    
-                    vetor[i] = vetor[i + 1];
-                    
-                    System.out.println("Pos: " + i + " " + vetor[i]);
+                if (i >= posicao) {
 
-                    
-                    
+                    vetor[i] = vetor[i + 1];
+
                 }
             }
             return true;
