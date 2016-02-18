@@ -48,9 +48,9 @@ public class ManipulaVetores {
                 switch (opt) {
 
                     case 1:
-                        
-                        System.out.println("\nDigite o valor para adicionar Item: " );
-                                recebeItem = scan.nextDouble();
+
+                        System.out.println("\nDigite o valor para adicionar Item: ");
+                        recebeItem = scan.nextDouble();
 
                         if (inserirItem(valores, recebeItem, 0) == true) {
 
@@ -63,10 +63,22 @@ public class ManipulaVetores {
 
                         break;
                     case 2:
-                        
-                        System.out.println("\nDigite o valor para procurar Item: " );
-                                recebeItem = scan.nextDouble();
-                        
+
+                        System.out.println("\nDigite o valor para procurar Item: ");
+                        recebeItem = scan.nextDouble();
+
+                        if (procurarItem(valores, recebeItem, valores.length) == -1) {
+
+                            System.out.println("\nO item NÃO EXISTE no Vetor!\n");
+
+                        } else {
+
+                            System.out.println("\nO item está na posição "
+                                    + procurarItem(valores, recebeItem, valores.length)
+                                    + " do Vetor!\n");
+
+                        }
+
                         break;
 
                     case 3:
@@ -118,16 +130,32 @@ public class ManipulaVetores {
         return false;
     }
 
-    public static double procurarItem(double[] vetor, double valorLido,
+    public static int procurarItem(double[] vetor, double valorLido,
             int qtdVetor) {
-        
-        
 
+        for(int i = 0; i < qtdVetor;i++){
+            
+            if(vetor[i] == valorLido){
+                
+                return i;
+                
+            }
+            
+            
+        }
+       
         return -1;
+
     }
 
     public static boolean removerItem(double[] vetor, double valorLido,
             int qtdVetor) {
+        
+        if(procurarItem(vetor, valorLido, qtdVetor) != -1){
+         
+            
+            
+        }
 
         return false;
     }
