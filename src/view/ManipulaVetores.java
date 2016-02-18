@@ -27,7 +27,7 @@ public class ManipulaVetores {
             System.out.println("---ManipulaVetores---\n"
                     + "Digite 8 valores para o VETOR!!!\n");
 
-            for (int i = 0; i < 8; i++) {
+            for (int i = 0; i < 5; i++) {
 
                 valores[i] = scan.nextDouble();
 
@@ -82,6 +82,23 @@ public class ManipulaVetores {
                         break;
 
                     case 3:
+
+                        System.out.println("\nDigite o valor para remover o Item: ");
+                        recebeItem = scan.nextDouble();
+
+                        boolean verifica = removerItem(valores, recebeItem, valores.length);
+
+                        if (verifica == false) {
+
+                            System.out.println("\nO item NÃO EXISTE no Vetor!\n");
+
+                        } else {
+
+                            System.out.println("\nItem EXCLUÍDO!\n"
+                                    + "-----Resultado-----\n");
+
+                        }
+
                         break;
                     case 4:
 
@@ -105,7 +122,8 @@ public class ManipulaVetores {
             }
         } catch (Exception ex) {
 
-            System.out.println("Erro: " + ex.getMessage());
+            System.out.println("Erro: " + ex.getMessage() + "\n");
+            ex.printStackTrace();
 
         }
 
@@ -133,28 +151,41 @@ public class ManipulaVetores {
     public static int procurarItem(double[] vetor, double valorLido,
             int qtdVetor) {
 
-        for(int i = 0; i < qtdVetor;i++){
-            
-            if(vetor[i] == valorLido){
-                
+        for (int i = 0; i < qtdVetor; i++) {
+
+            if (vetor[i] == valorLido) {
+
                 return i;
-                
+
             }
-            
-            
+
         }
-       
+
         return -1;
 
     }
 
     public static boolean removerItem(double[] vetor, double valorLido,
             int qtdVetor) {
-        
-        if(procurarItem(vetor, valorLido, qtdVetor) != -1){
-         
-            
-            
+
+        int posicao = procurarItem(vetor, valorLido, qtdVetor);
+
+        if (posicao != -1) {
+
+            for (int i = 0; i < qtdVetor - 1; i++) {
+
+                if ( i >= posicao) {
+                    
+                    vetor[i] = vetor[i + 1];
+                    
+                    System.out.println("Pos: " + i + " " + vetor[i]);
+
+                    
+                    
+                }
+            }
+            return true;
+
         }
 
         return false;
@@ -167,7 +198,7 @@ public class ManipulaVetores {
 
         for (int i = 0; i < vetor.length; i++) {
 
-            resul = resul + String.valueOf(vetor[i]) + " ";
+            resul = resul + String.valueOf("Pos.: " + i + " " + vetor[i]) + " ";
             pulaLinha++;
 
             if (pulaLinha % 10 == 0) {
