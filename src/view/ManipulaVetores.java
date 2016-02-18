@@ -19,7 +19,6 @@ public class ManipulaVetores {
         Scanner scan = new Scanner(System.in);
 
         double[] valores = new double[50];
-        int controle = 0;
         double recebeItem = 0.0;
         int opt = 0;
 
